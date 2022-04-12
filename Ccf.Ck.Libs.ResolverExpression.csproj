@@ -2,13 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>1.0.3</Version>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <!-- Nuget specific tags -->
   <PropertyGroup>
     <!-- File version -->
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <FileVersion>1.0.0.0</FileVersion>
+    <AssemblyVersion>1.0.3.0</AssemblyVersion>
+    <FileVersion>1.0.3.0</FileVersion>
     <!-- File version -->
 
     <!-- Description and Release notes -->
@@ -16,7 +18,9 @@
     <PackageProjectUrl>https://github.com/cleancodefactory/resolverexpression</PackageProjectUrl>
     <RepositoryUrl>https://github.com/cleancodefactory/resolverexpression</RepositoryUrl>
     <PackageTags>resolver compiled expression</PackageTags>
-    <PackageReleaseNotes>Contains base objects and default implementation for creating and using compiled expressions</PackageReleaseNotes>
+    <PackageReleaseNotes>Contains base objects and default implementation for creating and using compiled expressions
+    In version 1.0.3 was improved the exception reporting both at compile and runtime.
+    </PackageReleaseNotes>
     <!-- Description and Release notes -->
   </PropertyGroup>
 </Project>

@@ -136,7 +136,12 @@ namespace Ccf.Ck.Libs.ResolverExpression
                                     if (opstack.Count == 0) return runner.Complete(ReportError("Syntax error - function call has no function name at {0}",match));
                                     entry = opstack.Pop();
                                     if (entry.Term == Terms.identifier) {
-                                        runner.Add(GetResolver(entry.Value));
+                                        var _resolver = GetResolver(entry.Value);
+                                        if (_resolver != null) {
+                                            runner.Add(GetResolver(entry.Value));
+                                        } else {
+                                            return runner.Complete(ReportError("Resolver not found - {entry.Value} does not exist at {0}",match));    
+                                        }
                                     } else {
                                         return runner.Complete(ReportError("Syntax error - function call has no function name at {0}",match));
                                     }

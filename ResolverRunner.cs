@@ -95,7 +95,9 @@ namespace Ccf.Ck.Libs.ResolverExpression
                     }
                     return result.Result.Last();
                 } else {
-                    ex = new Exception("There is no result to return.");
+                    if (ex == null) {
+                        ex = new Exception("There is no result to return.");
+                    }
                     return new ResolverValue();
                 }
         }
