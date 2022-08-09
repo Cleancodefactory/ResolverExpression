@@ -2,15 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>1.0.3</Version>
+    <Version>1.0.4</Version>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <!-- Nuget specific tags -->
   <PropertyGroup>
     <!-- File version -->
-    <AssemblyVersion>1.0.3.0</AssemblyVersion>
-    <FileVersion>1.0.3.0</FileVersion>
+    <AssemblyVersion>1.0.4.0</AssemblyVersion>
+    <FileVersion>1.0.4.0</FileVersion>
     <!-- File version -->
 
     <!-- Description and Release notes -->
@@ -20,6 +20,7 @@
     <PackageTags>resolver compiled expression</PackageTags>
     <PackageReleaseNotes>Contains base objects and default implementation for creating and using compiled expressions
     In version 1.0.3 was improved the exception reporting both at compile and runtime.
+    v 1.0.4 - fixed problem with parsing negative numbers.
     </PackageReleaseNotes>
     <!-- Description and Release notes -->
   </PropertyGroup>

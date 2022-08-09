@@ -61,7 +61,7 @@ namespace Ccf.Ck.Libs.ResolverExpression
 
         }
         
-        private static readonly Regex _regex = new Regex(@"(\s+)|(true|false|null|value|name)|([a-zA-Z_\-][a-zA-Z0-9_\.]*)|(\()|(\))|(?:\'((?:\\'|[^\'])*)\')|([\+\-]?\d+(?:\.\d*)?)|(\,)|($)",
+        private static readonly Regex _regex = new Regex(@"(\s+)|(true|false|null|value|name)|([a-zA-Z_][a-zA-Z0-9_\.\-]*)|(\()|(\))|(?:\'((?:\\'|[^\'])*)\')|([\+\-]?\d+(?:\.\d*)?)|(\,)|($)",
             RegexOptions.Multiline);
         public ResolverExpression() {
             
