@@ -1,28 +1,15 @@
 # ResolverExpression
 
-Library which translates text representation into compiled expressions for fast execution
+Library which translates simple language for single line expressions into compiled expressions for faster execution.
+
+ResolverExpression has to be integrated into your project, several required functions implemented on the project side and any number of functions implemented for use in the expressions.
+
+Basically this gives you ability to pass as text small pieces of logic to the application instead of hard-coding them in it. Typically the expressions will come from configurations or similar files controlling the application.
+
+For more than simple expressions see our [ActionQuery](https://github.com/Cleancodefactory/ActionQuery) minimal language.
 
 ## Download the Nuget-Package
-[Nuget for Ccf.Ck.Libs.ResolverExpression](https://www.nuget.org/packages/Ccf.Ck.Libs.ResolverExpression/)
-
-## Learn about CoreKraft and BindKraft
-
-* [Learn about CoreKraft](https://bindkraft.io)
-* [Learn about BindKraft](https://bindkraft.io)
-* [CoreKraft Roadmap](https://github.com/cleancodefactory/corekraft/roadmap.md)
-* [BindKraft Roadmap](https://github.com/cleancodefactory/bindkraft/roadmap.md)
-* [CoreKraft release notes](https://github.com/cleancodefactory/corekraft/release-notes/README.md)
-* [BindKraft release notes](https://github.com/cleancodefactory/bindkraft/release-notes/README.md)
-* [CoreKraft Announcements](https://github.com/cleancodefactory/corekraft/announcements)
-* [BindKraft Announcements](https://github.com/cleancodefactory/bindkraft/announcements)
-* [Cleancodefactory blog](https://cleancodefactory.com/blog)
-
-## Getting help
-
-* [File a CoreKraft issue](https://github.com/cleancodefactory/corekraft/issues)
-* [File a BindKraft issue](https://github.com/cleancodefactory/bindkraft/issues)
-* [Ask on Stack Overflow](https://stackoverflow.com/questions/tagged/corekraft)
-* [See on youtube](https://youtube.com/channels)
+[Nuget for Ccf.Ck.Libs.ResolverExpression](https://www.nuget.org/packages/Ccf.Ck.Libs.ResolverExpression/). From version 1.0.4 nugets are also included in the repo for those who want to use them locally.
 
 ## How to Engage, Contribute and Provide Feedback
 
