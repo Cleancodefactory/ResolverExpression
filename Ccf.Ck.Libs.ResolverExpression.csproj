@@ -21,7 +21,7 @@
     The interface IResolverFinder is introduced to discorage using random objects as compilation parameters and become vulnerable to non-constant availability of the resolver delegates.
     They have to be available always in order to keep it possible to cache compiled expressions.
     v 1.0.6 - New deployment
-    v 1.0.7 - Fix error reporting
+    v 1.0.7 - Fix error reporting and pass finder
     </PackageReleaseNotes>
     <!-- Description and Release notes -->
   </PropertyGroup>

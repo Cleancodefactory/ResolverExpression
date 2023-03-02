@@ -97,10 +97,10 @@ namespace Ccf.Ck.Libs.ResolverExpression
         }
         #endregion
         public ResolverRunner<ResolverValue, ResolverContext> CompileValidationExpression(string expr, IResolverFinder<ResolverValue, ResolverContext> finder = null) {
-            return Compile(expr, ResolverOptions.Validator | ResolverOptions.RecurseValue);
+            return Compile(expr, ResolverOptions.Validator | ResolverOptions.RecurseValue, finder);
         }
         public ResolverRunner<ResolverValue, ResolverContext> CompileResolverExpression(string expr, IResolverFinder<ResolverValue, ResolverContext> finder = null) {
-            return Compile(expr, ResolverOptions.Default);
+            return Compile(expr, ResolverOptions.Default, finder);
         }
         public ResolverRunner<ResolverValue, ResolverContext> Compile(string _intext, ResolverOptions options, IResolverFinder<ResolverValue, ResolverContext> finder = null) {
             bool forValidation = (options & ResolverOptions.Validator) != 0;
