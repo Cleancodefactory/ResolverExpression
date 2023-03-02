@@ -1,6 +1,8 @@
 # ResolverExpression
 
-Library which translates text representation into compiled expressions for fast execution
+Library which translates text representation into compiled expressions for faster and repeated execution inside a project.
+
+Some documentation and examples will be added soon. For the most part we use this in our frameworks to implement something one can call a "smart configuration" where certain values are resolved through execution of simple expressions that use functions implemented by the project and provided for usage in the configuration files. 
 
 ## Download the Nuget-Package
 [Nuget for Ccf.Ck.Libs.ResolverExpression](https://www.nuget.org/packages/Ccf.Ck.Libs.ResolverExpression/)
@@ -9,13 +11,7 @@ Library which translates text representation into compiled expressions for fast 
 
 * [Learn about CoreKraft](https://bindkraft.io)
 * [Learn about BindKraft](https://bindkraft.io)
-* [CoreKraft Roadmap](https://github.com/cleancodefactory/corekraft/roadmap.md)
-* [BindKraft Roadmap](https://github.com/cleancodefactory/bindkraft/roadmap.md)
-* [CoreKraft release notes](https://github.com/cleancodefactory/corekraft/release-notes/README.md)
-* [BindKraft release notes](https://github.com/cleancodefactory/bindkraft/release-notes/README.md)
-* [CoreKraft Announcements](https://github.com/cleancodefactory/corekraft/announcements)
-* [BindKraft Announcements](https://github.com/cleancodefactory/bindkraft/announcements)
-* [Cleancodefactory blog](https://cleancodefactory.com/blog)
+
 
 ## Getting help
 

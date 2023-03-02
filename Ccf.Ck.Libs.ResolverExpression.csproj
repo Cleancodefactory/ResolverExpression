@@ -2,8 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>1.0.4</Version>
+    <Version>1.0.5</Version>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <!-- Nuget specific tags -->
@@ -21,7 +22,13 @@
     <PackageReleaseNotes>Contains base objects and default implementation for creating and using compiled expressions
     In version 1.0.3 was improved the exception reporting both at compile and runtime.
     v 1.0.4 - fixed problem with parsing negative numbers.
+    v 1.0.5 - Added way to pass custom resolving sources for GetResolver in compile time. Before that it was very difficult to use ther anything but something static or singleton.
+    The interface IResolverFinder is introduced to discorage using random objects as compilation parameters and become vulnerable to non-constant availability of the resolver delegates.
+    They have to be available always in order to keep it possible to cache compiled expressions.
     </PackageReleaseNotes>
     <!-- Description and Release notes -->
   </PropertyGroup>
+  <ItemGroup>
+        <None Include="README.md" Pack="true" PackagePath="\"/>
+  </ItemGroup>
 </Project>
