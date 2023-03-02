@@ -7,7 +7,13 @@ namespace Ccf.Ck.Libs.ResolverExpression
     public abstract class ResolverExpression<ResolverValue, ResolverContext> where ResolverValue: new() {
 
         #region Resolver suppliers
-        protected abstract ResolverDelegate<ResolverValue, ResolverContext> GetResolver(string name);
+        /// <summary>
+        /// Asked for resolver delegate by name during the compilation of expression.
+        /// </summary>
+        /// <param name="name"> The name of the resolver delegate needed</param>
+        /// <param name="finder">External find helper passed during compilation (see compile methods). The finder should be the same and the availability of the delegates returned should not depend on the specific execution circumstances.</param>
+        /// <returns></returns>
+        protected abstract ResolverDelegate<ResolverValue, ResolverContext> GetResolver(string name, IResolverFinder<ResolverValue, ResolverContext> finder = null);
         protected abstract ResolverDelegate<ResolverValue, ResolverContext> PushInt(int v);
         protected abstract ResolverDelegate<ResolverValue, ResolverContext> PushDouble(double v);
         protected abstract ResolverDelegate<ResolverValue, ResolverContext> PushString(string v);
@@ -90,13 +96,13 @@ namespace Ccf.Ck.Libs.ResolverExpression
             return fmt;
         }
         #endregion
-        public ResolverRunner<ResolverValue, ResolverContext> CompileValidationExpression(string expr) {
+        public ResolverRunner<ResolverValue, ResolverContext> CompileValidationExpression(string expr, IResolverFinder<ResolverValue, ResolverContext> finder = null) {
             return Compile(expr, ResolverOptions.Validator | ResolverOptions.RecurseValue);
         }
-        public ResolverRunner<ResolverValue, ResolverContext> CompileResolverExpression(string expr) {
+        public ResolverRunner<ResolverValue, ResolverContext> CompileResolverExpression(string expr, IResolverFinder<ResolverValue, ResolverContext> finder = null) {
             return Compile(expr, ResolverOptions.Default);
         }
-        public ResolverRunner<ResolverValue, ResolverContext> Compile(string _intext, ResolverOptions options) {
+        public ResolverRunner<ResolverValue, ResolverContext> Compile(string _intext, ResolverOptions options, IResolverFinder<ResolverValue, ResolverContext> finder = null) {
             bool forValidation = (options & ResolverOptions.Validator) != 0;
             Stack<OpEntry> opstack = new Stack<OpEntry>();
             ResolverRunner<ResolverValue, ResolverContext>.ResolverRunnerConstructor runner = new ResolverRunner<ResolverValue, ResolverContext>.ResolverRunnerConstructor();
@@ -136,9 +142,9 @@ namespace Ccf.Ck.Libs.ResolverExpression
                                     if (opstack.Count == 0) return runner.Complete(ReportError("Syntax error - function call has no function name at {0}",match));
                                     entry = opstack.Pop();
                                     if (entry.Term == Terms.identifier) {
-                                        var _resolver = GetResolver(entry.Value);
+                                        var _resolver = GetResolver(entry.Value, finder);
                                         if (_resolver != null) {
-                                            runner.Add(GetResolver(entry.Value));
+                                            runner.Add(GetResolver(entry.Value, finder));
                                         } else {
                                             return runner.Complete(ReportError("Resolver not found - {entry.Value} does not exist at {0}",match));    
                                         }
