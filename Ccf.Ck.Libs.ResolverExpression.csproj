@@ -2,18 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>1.0.5</Version>
+    <!--<Version>1.0.5</Version>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>-->
   </PropertyGroup>
 
   <!-- Nuget specific tags -->
   <PropertyGroup>
-    <!-- File version -->
-    <AssemblyVersion>1.0.4.0</AssemblyVersion>
-    <FileVersion>1.0.4.0</FileVersion>
-    <!-- File version -->
-
     <!-- Description and Release notes -->
     <Description>Library which translates text representation into compiled expressions for fast execution</Description>
     <PackageProjectUrl>https://github.com/cleancodefactory/resolverexpression</PackageProjectUrl>
@@ -25,6 +20,8 @@
     v 1.0.5 - Added way to pass custom resolving sources for GetResolver in compile time. Before that it was very difficult to use ther anything but something static or singleton.
     The interface IResolverFinder is introduced to discorage using random objects as compilation parameters and become vulnerable to non-constant availability of the resolver delegates.
     They have to be available always in order to keep it possible to cache compiled expressions.
+    v 1.0.6 - New deployment
+    v 1.0.7 - Fix error reporting
     </PackageReleaseNotes>
     <!-- Description and Release notes -->
   </PropertyGroup>

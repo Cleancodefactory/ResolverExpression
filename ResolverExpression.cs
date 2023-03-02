@@ -146,7 +146,7 @@ namespace Ccf.Ck.Libs.ResolverExpression
                                         if (_resolver != null) {
                                             runner.Add(GetResolver(entry.Value, finder));
                                         } else {
-                                            return runner.Complete(ReportError("Resolver not found - {entry.Value} does not exist at {0}",match));    
+                                            return runner.Complete(ReportError($"Resolver not found - {entry.Value} does not exist at {{0}}",match));    
                                         }
                                     } else {
                                         return runner.Complete(ReportError("Syntax error - function call has no function name at {0}",match));
